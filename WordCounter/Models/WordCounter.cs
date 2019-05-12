@@ -26,14 +26,27 @@ namespace WordCounter.Models
       return _sentence;
     }
 
+    public bool CheckIfEmpty()
+    {
+      if (string.IsNullOrEmpty(_word) && string.IsNullOrEmpty(_sentence))
+      {
+        return true;
+      }
+       else
+       {
+          return false;
+       }
+    }
+
     public int Count()
     {
       int counter = 0;
+      string lowerWord = _word.ToLower();
       string lowerSentence = _sentence.ToLower();
-      string[] wordsinSentence = lowerSentence.Split(' ');
+      string[] wordsinSentence = lowerSentence.Split(' ', '.', ',', '!', '?', '/', ';');
       foreach(var element in wordsinSentence)
       {
-          if(_word == element)
+          if(lowerWord == element)
           {
             counter++;
           }

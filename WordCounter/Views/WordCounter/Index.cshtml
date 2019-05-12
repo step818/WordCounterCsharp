@@ -3,11 +3,11 @@
 <h1>WordCounter</h1>
 <ul>
 
-@if (Model.isEmpty() == true)
+@if (Model.CheckIfEmpty() == true)
 {
   <p>You have not inputted any sentences yet!</p>
 }
-@if(Model.isEmpty() == false)
+@if(Model.CheckIfEmpty() == false)
 {
 
   <p>Your Inputted Sentence: <strong>@Model.GetSentence() </strong></p>

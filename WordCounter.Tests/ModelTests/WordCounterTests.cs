@@ -38,6 +38,18 @@ namespace WordCounter.Tests
         }
 
         [TestMethod]
+        public void CheckIfEmpty_ChecksUserInput_False()
+        {
+          string word = "not";
+          string sentence = "empty";
+          WordCounterClass test = new WordCounterClass(word, sentence);
+
+          bool result = test.CheckIfEmpty();
+
+          Assert.AreEqual(false, result);
+        }
+
+        [TestMethod]
         public void Count_ReturnCount_Int()
         {
           string word = "hi";
