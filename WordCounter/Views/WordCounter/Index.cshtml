@@ -5,14 +5,13 @@
 
 @if (Model.CheckIfEmpty() == true)
 {
-  <p>You have not inputted any sentences yet!</p>
+  <p>You have not filled out all the forms yet! Click on the link below.</p>
 }
 @if(Model.CheckIfEmpty() == false)
 {
 
-  <p>Your Inputted Sentence: <strong>@Model.GetSentence() </strong></p>
-  <p>Your Inputted Word: <strong>@Model.GetWord() </strong></p>
-  <p>Number of Occurences: <strong>@Model.Count() </strong></p>
+  <p>The <em>number</em> of times you used <strong> @Model.GetWord()</strong><br> in the
+  sentence <strong> @Model.GetSentence()</strong><br> issssssss: <strong>@Model.Count() </strong> times!</p>
 }
 
 </ul>
